@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="phone.php">Edit</a>
+
+</div>
+
+<div id="main">
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  function check() {
+    var x1 = document.forms["myForm"]["license_plate"].value;
+    var x2 = document.forms["myForm"]["vin"].value;
+
+    if (x1 ===  x2)
+    {
+
+        alert("License_plate and  VIN must not be empty");
+        document.getElementById("license_plate").style.color = "red";
+        return false;
+
+
+
+    }
+
+
+
+}
+
+</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<title>Car Protection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+<style>
+body  {
+    background-image: url("Images/395E5427-542A-42B0-93E0-66C7E17EDCE0.jpeg");
+    background-size: cover;
+}
+</style>
+
+<center>
+
+<div class="w3-container w3-card">
+  <h3>Car Protection</h3>
+</div>
+
+
+
+</br>
+
+
+<div class="w3-container w3-card">
+
+<h5>This form is to send an alert to the owner
+of the license plate entered below</h5>
+
+
+</div>
+</br></br>
+
+<h6>
+
+
+<form action="index.php" name="myForm" onsubmit="return check()" method="post">
+
+
+<select  name="state" style="width: 100px; height: 30px;">
+
+<option value="Alabama">Alabama</option>
+<option value="Alaska">Alaska</option>
+<option value="Arizona">Arizona</option>
+<option value="Arkansas">Arkansas</option>
+<option selected value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Iowa">Iowa</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Maine">Maine</option>
+<option value="Maryland">Maryland</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Missouri">Missouri</option>
+<option value="Montana">Montana</option>
+<option value="Nebraska">Nebraska</option>
+<option value="Nevada">Nevada</option>
+
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="New York">New York</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Vermont">Vermont</option>
+<option value="Virginia">Virginia</option>
+<option value="Washington">Washington</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="Wyoming">Wyoming</option>
+
+</select>
+
+
+<input type="text" size="30" placeholder ="License plate number" id ="license_plate" name="license_plate" style="width: 200px; height: 30px;" ></br></br>
+
+<input type="text" size="30" placeholder ="or VIN" name="vin" id ="vin" style="width: 300px; height: 30px;" ></br></br>
+
+
+
+<select name="message" style="width: 300px; height: 30px;">
+  <option value="tow away">Tow Away</option>
+  <option value="Someone break car">Break your vehicle</option>
+
+</select></br></br>
+
+<input type="submit" value="Submit"  style="width: 300px; height:40px;" /></br>
+
+</form>
+
+
+<form>
+<button type="submit" formaction="phone.php"   style="width: 300px; height:40px;">Insert Edit & Delete</button>
+</form>
+
+</br></br>
+
+
+
+
+
+
+
+
+</h3>
+</center>
+
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBVTTxQ8l2W9issqI9w6pDv-ZzHJSQ2puQ",
+    authDomain: "fir-test-25e08.firebaseapp.com",
+    databaseURL: "https://fir-test-25e08.firebaseio.com",
+    projectId: "fir-test-25e08",
+    storageBucket: "fir-test-25e08.appspot.com",
+    messagingSenderId: "320976803976"
+  };
+  firebase.initializeApp(config);
+
+</script>
